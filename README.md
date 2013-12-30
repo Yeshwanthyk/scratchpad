@@ -1,0 +1,4 @@
+gnana
+=====
+
+jñāna : Knowledge (Sanskrit)
