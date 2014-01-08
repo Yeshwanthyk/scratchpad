@@ -1,6 +1,6 @@
 ## Notes
 
-### Late chapter 3 and 4, 5
+### Late chapter 2 and 3, 4
 
 * *flet* is the command for setting local functions:
 
