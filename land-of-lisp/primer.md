@@ -1,6 +1,6 @@
 ## Notes
 
-### Late chapter 3 and 4
+### Late chapter 3 and 4, 5
 
 * *flet* is the command for setting local functions:
 
@@ -34,3 +34,11 @@ can make recursive calls within the local functions. For example:
 * *cdr* gets the first element of a list:
 
         (cdr '(pork beef chicken))')    ;; (BEEF CHICKEN)
+
+* We can use both *cdr* and *car* on a list:
+
+        (car (cdr '((peas carrots chicken))))    ;;CARROTS
+
+    Can also be written as:
+
+        (cadr '((peas carrots chicken)))    ;;CARROTS
