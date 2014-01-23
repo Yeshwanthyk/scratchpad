@@ -34,3 +34,21 @@
             where bmi = weight / height ^ 2
                   skinny = 18.5
                   normal = 25.0
+* The **where** doesn't pollute other namespaces. And pattern matching can be used in **where**
+* **let <***bindings***> in <***expression***>** are similar to **where** except
+    - they are expressions themselves.
+    - they can be used by functions in local scope:
+
+            (let (a,b,c) = (1,2,3) in a+b+c) * 100 -- 600
+
+            [let square x = x * x in (square 5, square 3, square 2)] -- [(25,9,4)]
+    - You can put **let** in list comprehensions:
+
+            calcBmis :: (RealFLoat a) => [(a,a)] -> [a]
+            calcBmis xs = [bmi | (w,h) <- xs, let bmi = w/h ^ 2, bmi > 25.0]
+* We can do pattern matching for **case expressions**:
+
+        describeList :: [a] -> String
+        describeList xs = "The list is" ++ case xs of [] -> "empty"
+                                                      [x] -> "singleton list"
+                                                      [xs] -> lomger list
