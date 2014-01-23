@@ -35,7 +35,7 @@
                   skinny = 18.5
                   normal = 25.0
 * The **where** doesn't pollute other namespaces. And pattern matching can be used in **where**
-* **let <***bindings***> in <***expression***>** are similar to **where** except
+* **let <bindings> in <expression>** are similar to **where** except
     - they are expressions themselves.
     - they can be used by functions in local scope:
 
