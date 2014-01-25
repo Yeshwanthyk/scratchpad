@@ -57,7 +57,9 @@ foo = add 2 (divide 3 4)
 foo = add 2 $ divide 3 4 -- $ is used to save space instead
                          -- of using paranthesis
 
+
 -- Pattern Matching
+-- Pattern is matched in the order they are listed in
 
 fact 0 = 1
 fact n = n * fact(n-1)
@@ -65,3 +67,21 @@ fact n = n * fact(n-1)
 len [] = 0
 len lst = 1 + len(tail lst)
 
+len' [] = 0
+len' [x:xs] = 1 + len' xs -- [x:xs] is a common idiom
+
+foo "hello" = "asdf"
+foo "world" = "Baloons"
+foo _ = "CHUNKY BACON" -- _ here means match everything.
+
+-- At Patterns
+
+foo allxs@(x:xs) = "All xs are:" ++ (show allxs) ++ "\n"
+                   ++ "The first x is:" ++ (show x) ++ "\n"
+                   ++ "rest xs are:" ++ (show xs)
+
+-- Guards
+-- Very similar to pattern Matching
+foo n | n < 0 = "negative"
+      | n == 0 = "zero"
+      | otherwise "positive"
