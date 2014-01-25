@@ -39,3 +39,29 @@ last lst = lst !! (length lst)
 
 10_elems lst = take 10 lst
 11_and_beyond lst = drop 10 lst
+
+-- Composition
+
+import Data.List (sort)class
+
+min_n n = (take n) . sort
+
+descending_sort lst = (reverse . sort) lst
+
+-- Function Application Operator
+-- To use add and divide as a regular function
+add = (+)
+divide = (/)
+
+foo = add 2 (divide 3 4)
+foo = add 2 $ divide 3 4 -- $ is used to save space instead
+                         -- of using paranthesis
+
+-- Pattern Matching
+
+fact 0 = 1
+fact n = n * fact(n-1)
+
+len [] = 0
+len lst = 1 + len(tail lst)
+
