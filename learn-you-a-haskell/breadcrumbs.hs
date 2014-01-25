@@ -1,9 +1,41 @@
 {-- The Breadcrumb tutorial you can get to at
     http://acm3.wustl.edu/functional/hs-breads.php
-
-    Nothing like learning a new language by actually
-    typing and checking the language constructs
 --}
 
 main = do
     putStrLn "Hello world"
+
+-- List comprehensions
+
+naturals        = [x | x <- [1..]]
+perfect_squares = [x*x | x <- naturals]
+multiples_of_3  = [x | x <- naturals, x `mod` 3 == 0]
+all_pairs       = [(x,y) | x <- [1..10], y <- [1..10]]
+
+-- Currying
+add a b = a + b
+add3 = add 3
+
+multiples_of n = [n, n*2..]
+multiples_of_43 = multiples_of 43
+
+-- Lists
+lst = 1 : 2 : 3 : 4 : 5
+lst' = [1,2,3,4]
+lst'' = 1 : [2,3,4]
+
+foo = [1,2] ++ [3,4]
+foo' = [1,2,3] ++ [4]
+
+inf_ones = 1: inf_ones
+inf_ones' = [1,1..]
+inf_ones'' = 1 ++ [inf_ones]
+
+first lst = head lst
+rest lst = tail lst
+
+nth_index n lst = lst !! n
+last lst = lst !! (length lst)
+
+10_elems lst = take 10 lst
+11_and_beyond lst = drop 10 lst
