@@ -42,7 +42,7 @@ last lst = lst !! (length lst)
 
 -- Composition
 
-import Data.List (sort)class
+import Data.List (sort)
 
 min_n n = (take n) . sort
 
