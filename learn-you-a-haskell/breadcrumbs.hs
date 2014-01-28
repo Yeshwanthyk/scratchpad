@@ -85,3 +85,26 @@ foo allxs@(x:xs) = "All xs are:" ++ (show allxs) ++ "\n"
 foo n | n < 0 = "negative"
       | n == 0 = "zero"
       | otherwise "positive"
+
+-- Case
+foo n = case signum n of
+        (-1) -> "negative"
+        0 -> "zero"
+        1 -> "positive"
+
+-- Where
+max_list lst = head rslst where
+    rslst = reverse slst
+    slst = sort lst
+
+-- Tuples
+min_max_list lst = (head slst, head rslist) where
+    rslst = reverse slst
+    slst = sort lst
+
+magnitude (x,y) = sqrt(x^2 + y^2)
+
+pythagorean_triples = [(a,b,c) | c <- [1..]
+                                 b <- [1..c]
+                                 a <- [1..b]
+                                 a ^ 2 + b ^ 2 = c ^ 2]
