@@ -45,3 +45,20 @@ The book uses ruby to explore UNIX processes. Jesse also gives the corresponding
         puts STDERR.fileno      => 2
 
 * Ruby IO maps to open(2), close(2), read(2), write(2), pipe(2), fsync(2), stat(2) etc
+
+#### Resource Limit
+* Limits are imposed by the kernel:
+
+        Process.getrlimit(:NOFILE) => [2560, big_number]
+* getrlimit return a 2-element array
+    - First number is the soft limit
+    - Second number is hard limit
+* The soft limit can be bumped by:
+
+        Process.setrlimit(:NOFILE, 4096)
+
+    To set soft limit to the hard limit:
+
+        Process.setrlimit(:NOFILE, Process.getrlimit(:NOFILE)[1])
+* If you exceed the soft limit, an exception will be raised (Errno::EMFILE)
+* Maps to getrlimit(2) and setrlimit(2)
