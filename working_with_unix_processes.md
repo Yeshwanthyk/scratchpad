@@ -8,13 +8,13 @@ The book uses ruby to explore UNIX processes. Jesse also gives the corresponding
 * Each process has a **PID**:
 
         puts Process.pid
-    - maps to getpid(2)
+    - maps to *getpid(2)*
 * A global (albeit implicit) way to retreive the current pid is using *$$*
 #### PPID
 * Each process has a Parent process **PPID**:
 
         puts Process.ppid
-    - maps to getppid(2)
+    - maps to *getppid(2)*
 
 #### File Descriptor
 * In UNIX everything is treated as a file(resource). Any time a resource is opened within a process it is assigned a **file descriptor** number.
@@ -44,7 +44,8 @@ The book uses ruby to explore UNIX processes. Jesse also gives the corresponding
         puts STDOUT.fileno      => 1
         puts STDERR.fileno      => 2
 
-* Ruby IO maps to open(2), close(2), read(2), write(2), pipe(2), fsync(2), stat(2) etc
+* Ruby IO maps to *open(2)*, *close(2)*, *read(2)*, *write(2)*,
+    *pipe(2)*, *fsync(2)*, *stat(2)* etc
 
 #### Resource Limit
 * Limits are imposed by the kernel:
@@ -61,4 +62,26 @@ The book uses ruby to explore UNIX processes. Jesse also gives the corresponding
 
         Process.setrlimit(:NOFILE, Process.getrlimit(:NOFILE)[1])
 * If you exceed the soft limit, an exception will be raised (Errno::EMFILE)
-* Maps to getrlimit(2) and setrlimit(2)
+* Real world examples:
+    - If you want to handle thousands of sumultaneous network connections
+    - Restrain system resources when executing third part code
+* Maps to *getrlimit(2)* and *setrlimit(2)*
+
+#### Environment of the Process
+* A little ruby heavy chapter
+* Every process inherits environment variable from its parent. Its set per process
+and global to each process.
+* Ruby ENV used hash-style accessor, but doesn't implement all the **Hash** API:
+
+    puts ENV['EDITOR']
+    puts ENV.has_key?('PATH')
+* Access to special Array called **ARGV**
+* You can change the name of the process:
+
+    puts $PROGRAM_NAME
+
+    10.downto(1) do |num|
+        $PROGRAM_NAME = "Process: #{num}"
+        puts $PROGRAM_NAME
+    end
+* Somewhat maps to *setenv(2)* and *getenv(2)*. Also, *environ(2)*
