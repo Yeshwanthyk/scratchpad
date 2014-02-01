@@ -19,3 +19,21 @@ maximumE :: (Ord a) => [a] -> a
 maximumE [] = error "maximum of empty list"
 maximumE [x] = x
 maximumE (x:xs) = max x (maximumE xs)
+
+--Replicate
+
+replicate' :: (Num i, Ord i) => i -> a -> [a]
+replicate' n x
+    | n <= 0    = []
+    | otherwise x:replicate' (n-1) x
+
+-- Reverse
+reverse' :: [a] -> [a]
+reverse' [] = []
+reverse' x:xs = reverse' xs ++ [x]
+
+--zip
+zip' :: [a] -> [b] -> [(a,b)]
+zip' _ [] = []
+zip' [] _ = []
+zip' (x:xs) (y:ys) = (x,y) : zip' (xs,ys)
