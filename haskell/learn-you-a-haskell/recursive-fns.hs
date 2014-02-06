@@ -44,3 +44,18 @@ zip' :: [a] -> [b] -> [(a,b)]
 zip' _ [] = []
 zip' [] _ = []
 zip' (x:xs) (y:ys) = (x,y) : zip' xs ys
+
+--Elem
+elem' :: (Eq a) => a -> [a] -> Bool
+elem' a [] = False
+elem' a (x:xs)
+    | a == x    = True
+    | otherwise = a `elem'` xs
+
+-- Quicksort
+quicksort :: (Ord a) => [a] -> [a]
+quicksort [] = []
+quicksort (x:xs) = 
+    let smallerSort = quicksort [a | a <- xs, a <= x]
+        biggerSort  = quicksort [a | a<- xs, a > x]
+    in smallerSort ++ [x] ++ biggerSort
