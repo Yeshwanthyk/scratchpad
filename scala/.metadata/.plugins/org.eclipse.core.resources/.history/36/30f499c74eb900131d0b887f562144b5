@@ -1,6 +1,6 @@
 package week1
 
-object session {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(422); 
+object session {
 		
 		def	sqrt(x: Double) = {
 
@@ -16,8 +16,8 @@ object session {;import org.scalaide.worksheet.runtime.library.WorksheetSupport.
         
 	    sqrtIter(1.0, x)
     
-    };System.out.println("""sqrt: (x: Double)Double""");$skip(13); val res$0 = 
+    }                                             //> sqrt: (x: Double)Unit
 
-    sqrt(4);System.out.println("""res0: Double = """ + $show(res$0))}
+    sqrt(4)
     
 }
