@@ -7,6 +7,7 @@ object exercise {;import org.scalaide.worksheet.runtime.library.WorksheetSupport
 			else loop(acc * n, n - 1)
 			
 			loop(1, n)
-	};System.out.println("""factorial: (n: Int)Int""");$skip(14); val res$0 = 
-	factorial(4);System.out.println("""res0: Int = """ + $show(res$0))}
+	};System.out.println("""factorial: (n: Int)Int""");$skip(15); val res$0 = 
+
+	factorial(6);System.out.println("""res0: Int = """ + $show(res$0))}
 }

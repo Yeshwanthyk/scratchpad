@@ -10,4 +10,6 @@ object exercise {
 	}                                         //> factorial: (n: Int)Int
 
 	factorial(6)                              //> res0: Int = 720
+
+	factorial(24)                             //> res1: Int = -775946240
 }
