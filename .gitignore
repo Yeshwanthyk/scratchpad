@@ -1,5 +1,5 @@
 *.pydevproject
-scala/.metadata
+.metadata
 .gradle
 bin/
 tmp/
@@ -29,3 +29,16 @@ local.properties
 # # TeXlipse plugin
 .texlipse
 
+.cache
+
+.classpath
+
+.project
+
+.classpath
+
+.project
+
+target/*
+project/project/*
+project/target/*
