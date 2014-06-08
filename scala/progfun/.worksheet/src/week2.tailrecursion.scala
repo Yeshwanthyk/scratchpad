@@ -1,6 +1,6 @@
 package week2
 
-object exercise {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(169); 
+object tailrecursion {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(174); 
 	def factorial(n: Int): Int = {
 		def loop(acc: Int, n: Int): Int =
 			if (n == 0) acc
