@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+rawMarkup	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^  rawMarkup: function() {$/;"	function	line:14
+render	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^  render: function() {$/;"	function	line:19
+Comment	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^var Comment = React.createClass({$/;"	variable	line:13
+loadCommentsFromServer	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^  loadCommentsFromServer: function() {$/;"	function	line:32
+success	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^      success: function(data) {$/;"	function	line:37
+error	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^      error: function(xhr, status, err) {$/;"	function	line:40
+handleCommentSubmit	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^  handleCommentSubmit: function(comment) {$/;"	function	line:45
+success	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^      success: function(data) {$/;"	function	line:54
+error	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^      error: function(xhr, status, err) {$/;"	function	line:57
+getInitialState	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^  getInitialState: function() {$/;"	function	line:62
+componentDidMount	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^  componentDidMount: function() {$/;"	function	line:65
+render	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^  render: function() {$/;"	function	line:69
+CommentBox	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^var CommentBox = React.createClass({$/;"	variable	line:31
+render	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^  render: function() {$/;"	function	line:81
+CommentList	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^var CommentList = React.createClass({$/;"	variable	line:80
+handleSubmit	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^  handleSubmit: function(e) {$/;"	function	line:101
+render	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^  render: function() {$/;"	function	line:112
+CommentForm	/Users/Yesh/Desktop/Projects/Personal/personal-projects/gnana/js/react/react-example/public/scripts/example.js	/^var CommentForm = React.createClass({$/;"	variable	line:100
