@@ -16,6 +16,19 @@
     <!-- <script type="text/babel" src="scripts/example.js"></script> -->
     <script type="text/babel">
 
+        var Comment = React.createClass({
+            render: function() {
+                return (
+                    <div className="comment">
+                        <h2 className="commentAuthor">
+                            {this.props.author}
+                        </h2>
+                            {this.props.children}
+                    </div>
+                );
+            }
+        });
+
         var CommentBox = React.createClass({
             render: function() {
                 return (
@@ -31,8 +44,9 @@
         var CommentList = React.createClass({
             render: function() {
                 return (
-                    <div>
-                    I am a commentList
+                    <div className="commentList">
+                        <Comment author="Pete Hunt">First!</Comment>
+                        <Comment author="Dave Hunt">Second</Comment>
                     </div>
                 );
             }
