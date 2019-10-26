@@ -28,46 +28,41 @@ Example 1:
 
 def number_of_islands(matrix):
 
-    if not in matrix:
+    if not matrix:
         return 0
 
-    visited = set()
+    count = 0
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            if matrix[i][j] == '1':
+                traverse(matrix, i, j)
+                count += 1
+    return count
 
-    rows, cols = len(matrix), len(matrix[0])
+
+def traverse(matrix, i, j):
+
+    if i < 0 or j < 0 or i >= len(matrix) or j >= len(matrix[0]) or matrix[i][j] != '1':
+        return
+    matrix[i][j] = '#'
+    # traverse(grid, i+1, j)
+    # traverse(grid, i-1, j)
+    # traverse(grid, i, j+1)
+    # traverse(grid, i, j-1)
+    # if i < 0 or i >= len(matrix) or j < 0 or j >= len(matrix[0]) or matrix[i][j] != '1':
+    #     return
+
     directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
-
-    number_of_islands = 0
-
-    def traverse(i, j):
-
-        if (i, j) in visited:
-            return
-
-        visited.add((i, j))
-
-        if matrix[i][j] == '0':
-            return
-
-        for dir in directions:
-
-            next_i, next_j = i + dir[0], j + dir[1]
-            # if `0`, add to visited and continue
-            if 0 <= next_i < rows and 0 <= next_j < cols:
-                if matrix[next_i][next_j] == '0':
-                    continue
-                else:
-                    traverse(next_i, next_j)
-
-    for i in range(rows):
-        for j in range(cols):
-            if matrix[i][j] == '1' and (i, j) not in visited:
-                number_of_islands += 1
-            traverse(i, j)
-
-    return number_of_islands
+    for dir in directions:
+        next_i, next_j = i + dir[0], j + dir[1]
+        traverse(matrix, next_i, next_j)
+    # traverse(matrix, i, j+1)
+    # traverse(matrix, i, j-1)
+    # traverse(matrix, i+1, j)
+    # traverse(matrix, i-1, j)
 
 
-matrix = [["1", "1", "1", "1", "0"], ["1", "1", "0", "1", "0"],
+matrix = [["1", "1", "0", "1", "0"], ["1", "1", "0", "1", "0"],
           ["1", "1", "0", "0", "0"], ["0", "0", "0", "0", "0"]]
 ans = number_of_islands(matrix)
 print(ans)
