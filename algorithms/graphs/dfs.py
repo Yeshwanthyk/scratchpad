@@ -36,3 +36,26 @@ def DFS(matrix):
     for i in range(rows):
         for i in range(cols):
             traverse(i, j)
+
+
+"""
+Given empty array, walk through and produce dfs
+"""
+
+
+# class Node:
+#     def __init__(self, name):
+#         self.childern = []
+#         self.name = name
+
+#     def add_child(self, name):
+#         self.childern.append(Node(name))
+#         return self
+
+#     def depth_first_search(self, array):
+#         array.append(self.name)
+
+#         for childern in self.childern:
+#             childern.depth_first_search(array)
+
+# return array
