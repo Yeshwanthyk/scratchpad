@@ -47,18 +47,23 @@ def eval_RPN(tokens):
         if token not in valid_operators:
             stack.append(token)
         else:
-            var1 = stack.pop()
-            var2 = stack.pop()
+            right = stack.pop()
+            left = stack.pop()
 
-            computed_var = (eval(str(var2) + token + str(var1)))
+            # computed_var = (eval(str(var2) + token + str(var1)))
+            if token == "+":
+                computed_var = left + right
+            elif token == "-":
+                computed_var = left - right
+            elif token == "*":
+                computed_var = left * right
+            else:
+                computed_var = left / right
 
-            if token == "/":
                 if computed_var > 0:
                     computed_var = math.floor(computed_var)
                 else:
                     computed_var = math.ceil(computed_var)
-
-            breakpoint()
 
             stack.append(computed_var)
 
