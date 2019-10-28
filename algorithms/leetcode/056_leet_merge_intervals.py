@@ -21,12 +21,23 @@ def merge_intervals(intervals):
     if (len(intervals) <= 1):
         return intervals
 
+    intervals = sorted(intervals, key=lambda i: i[0])
     updated_intervals = []
 
     for i in range(0, len(intervals), 2):
 
         if intervals[i+1][0] <= intervals[i][1]:
-            updated_intervals.append([intervals[i][0], intervals[i+1][1]])
+            tmp = []
+            while(intervals[i] and intervals[i+1]):
+                if (intervals[i][0] <= intervals[i+1][0]):
+                    tmp.append(intervals[i][0])
+                    intervals[i].pop(0)
+                else:
+                    tmp.append(intervals[i+1][0])
+                    intervals[i+1].pop(0)
+
+            tmp = tmp + intervals[i] + intervals[i+1]
+            updated_intervals.append([tmp[0], tmp[len(tmp) - 1]])
         else:
             updated_intervals.append(intervals[i])
             updated_intervals.append(intervals[i+1])
@@ -34,7 +45,7 @@ def merge_intervals(intervals):
     return updated_intervals
 
 
-intervals = [[1, 4], [0, 4]]
+intervals = [[1, 4], [2, 3]]
 ans = merge_intervals(intervals)
 print(ans)
 
