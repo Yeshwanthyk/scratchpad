@@ -18,34 +18,32 @@ import unittest
 
 def merge_intervals(intervals):
 
-    if (len(intervals) <= 1):
-        return intervals
+    if len(intervals) < 1:
+        return []
 
-    intervals = sorted(intervals, key=lambda i: i[0])
-    updated_intervals = []
+    sorted_intervals = sorted(intervals, key=lambda x: x[0])
 
-    for i in range(0, len(intervals), 2):
+    m = []
+    l, r = 0, 0
 
-        if intervals[i+1][0] <= intervals[i][1]:
-            tmp = []
-            while(intervals[i] and intervals[i+1]):
-                if (intervals[i][0] <= intervals[i+1][0]):
-                    tmp.append(intervals[i][0])
-                    intervals[i].pop(0)
-                else:
-                    tmp.append(intervals[i+1][0])
-                    intervals[i+1].pop(0)
-
-            tmp = tmp + intervals[i] + intervals[i+1]
-            updated_intervals.append([tmp[0], tmp[len(tmp) - 1]])
+    for interval in sorted_intervals:
+        if not m:
+            m = [interval]
         else:
-            updated_intervals.append(intervals[i])
-            updated_intervals.append(intervals[i+1])
+            l = m[-1:][0][0]
+            r = m[-1:][0][1]
 
-    return updated_intervals
+            if interval[0] <= r:
+                r = max(r, interval[1])
+                m.pop()
+                m.append([l, r])
+            else:
+                m.append(interval)
+    return m
 
 
-intervals = [[1, 4], [2, 3]]
+intervals = [[1, 1], [2, 6], [8, 10], [1, 18]]
+# intervals = [[]]
 ans = merge_intervals(intervals)
 print(ans)
 
