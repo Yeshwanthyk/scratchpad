@@ -8,41 +8,80 @@ Example:
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
+
+Problems I missed:
+- What if a carry is left over
+- what if one of them has just 0 -- [1, 8][0]
+- Added new bugs like if first val starts with 0
+- Not carry over values correctly using `carry`
 """
 
 
-def add_two_numbers(A, B):
+class ListNode:
+    # Definition for singly-linked list.
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
-    if not A and not B:
-        return []
 
-    summed = []
-    # Pad smaller array with 0s
-    max_len = max(len(A), len(B))
+def add_two_numbers(l1, l2):
 
-    if len(A) < len(B):
-        for i in range(len(B) - len(A)):
-            A.append(0)
-    else:
-        for i in range(len(A) - len(B)):
-            B.append(0)
+    if not l1 or (l1.val == 0 and l1.next is None):
+        return l2
+    if not l2 or (l2.val == 0 and l1.next is None):
+        return l1
 
-    # iterate over the length of same sized arrays and minus 10. Add the value to new
-    # list and add next set of values with 1
     carry = 0
-    for i in range(max_len):
-        new_sum = carry + A[i] + B[i]
-        if (new_sum >= 10):
-            summed.append((10 - new_sum))
+    tmp = new_node = ListNode(0)
+
+    while l1 or l2:
+
+        if l1:
+            carry += l1.val
+            l1 = l1.next
+        if l2:
+            carry += l2.val
+            l2 = l2.next
+
+        if carry >= 10:
+            tmp.next = ListNode(carry - 10)
             carry = 1
         else:
-            summed.append(new_sum)
+            tmp.next = ListNode(carry)
             carry = 0
 
-    return summed
+        tmp = tmp.next
+
+        if l1 is None and l2 is None and carry:
+            tmp.next = ListNode(carry)
+
+    return new_node.next
 
 
-A = [2, 4, 3]
-B = [5, 6, 4]
-ans = add_two_numbers(A, B)
+# [0,8,6,5,6,8,3,5,7]
+# [6,7,8,0,8,5,8,9,7]
+
+l1 = ListNode(0)
+l1.next = ListNode(8)
+l1.next.next = ListNode(6)
+l1.next.next.next = ListNode(5)
+l1.next.next.next = ListNode(6)
+l1.next.next.next.next = ListNode(8)
+l1.next.next.next.next.next = ListNode(3)
+l1.next.next.next.next.next.next = ListNode(5)
+l1.next.next.next.next.next.next.next = ListNode(7)
+
+l2 = ListNode(6)
+l2.next = ListNode(7)
+l2.next.next = ListNode(8)
+l2.next.next.next = ListNode(0)
+l2.next.next.next = ListNode(8)
+l2.next.next.next.next = ListNode(5)
+l2.next.next.next.next.next = ListNode(8)
+l2.next.next.next.next.next.next = ListNode(9)
+l2.next.next.next.next.next.next.next = ListNode(7)
+
+
+ans = add_two_numbers(l1, l2)
+breakpoint()
 print(ans)
