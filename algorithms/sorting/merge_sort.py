@@ -26,6 +26,7 @@ def merge(left, right):
     return merged + left + right
 
 
-array = [4, 9, 8, 12, 1]
+# array = [4, 9, 8, 12, 1]
+array = [[7, 9], [4, 12]]
 ans = merge_sort(array)
 print(ans)
