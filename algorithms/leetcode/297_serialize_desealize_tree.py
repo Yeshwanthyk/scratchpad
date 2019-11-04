@@ -28,27 +28,38 @@ class TreeNode:
 
 def serialize(root):
 
-    if root is None:
-        return ""
+    def doit(node):
+        if not node:
+            return res.append("#")
 
-    msg = f"{root.val}" + ',' + serialize(root.left) + serialize(root.right)
+        res.append(str(node.val))
+        doit(node.left)
+        doit(node.right)
 
-    return msg.strip(",")
+    res = []
+    doit(root)
+    return ' '.join(res)
 
 
-def deserialize(s_list):
+def deserialize(serialized_string):
+
+    serialized_string = serialized_string.split(" ")
+    return deserialize_helper(serialized_string)
+
+
+def deserialize_helper(s_list):
 
     if len(s_list) == 0:
         return
 
     val = s_list.pop(0)
 
-    if s_list is 'X':
+    if val is None or val is '#':
         return
 
     new_node = TreeNode(val)
-    new_node.left = deserialize(s_list)
-    new_node.right = deserialize(s_list)
+    new_node.left = deserialize_helper(s_list)
+    new_node.right = deserialize_helper(s_list)
 
     return new_node
 
@@ -56,11 +67,9 @@ def deserialize(s_list):
 # A = TreeNode('A')
 # A.left = TreeNode('B')
 # A.right = TreeNode('C')
-# A.left.left = TreeNode('X')
 # A.left.right = TreeNode('D')
-A = "A,B,X,D,C"
-A_list = A.split(",")
+A = 'A B # D # # C # #'
 
-ans = deserialize(A_list)
+ans = deserialize(A)
 breakpoint()
 print(ans)
