@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>First React app</title>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      const name = "Yesh";
+      const handle = "@yesh";
+
+      function NameComponent(props) {
+        return React.createElement("h1", null, "Welcome " + props.name);
+      }
+
+      function HandleComponent(props) {
+        return React.createElement("h3", null, props.handle);
+      }
+
+      const wrapperElement = React.createElement(
+        "div",
+        { id: "container" },
+        React.createElement(NameComponent, { name: "yesh" }),
+        React.createElement(HandleComponent, { handle: "@yesh" })
+      );
+
+      ReactDOM.render(wrapperElement, document.getElementById("app"));
+    </script>
+  </body>
+</html>
