@@ -71,5 +71,4 @@ def deserialize_helper(s_list):
 A = 'A B # D # # C # #'
 
 ans = deserialize(A)
-breakpoint()
 print(ans)
