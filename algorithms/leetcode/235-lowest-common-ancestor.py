@@ -6,3 +6,26 @@ def lca(root, p, q):
             root = root.left
         else:
             return root
+
+
+def LCA_bst(root, p, q):
+
+    if not root:
+        return
+
+    if not p or not q:
+        return
+
+    if p < root.val and q < root.val:
+        return LCA_bst(root.left)
+
+    if p > root.val and q > root.val:
+        return LCA_bst(root.right)
+
+    if p == root.val:
+        return p
+
+    if q == root.val:
+        return q
+
+    return root
