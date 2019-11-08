@@ -29,22 +29,35 @@ class TreeNode:
 
 def max_depth(root):
 
-    if not root:
-        print("no more leaves")
+    if root is None:
         return 0
 
     left = max_depth(root.left)
+
     right = max_depth(root.right)
 
-    depth = 1 + max(left, right)
-    return depth
+    if abs(left - right) > 1:
+        return -1
+
+    return 1 + max(left, right)
+    # if not root:
+    #     return 0
+
+    # dl = max_depth(root.left)
+    # dr = max_depth(root.right)
+
+    # if abs(dl - dr) > 1:
+    #     breakpoint()
+    #     return -1
+
+    # return 1 + max(dl, dr)
 
 
 root = TreeNode(5)
 root.left = TreeNode(3)
 root.right = TreeNode(9)
-root.left.left = TreeNode(2)
-root.left.right = TreeNode(1)
+# root.left.left = TreeNode(2)
+# root.left.right = TreeNode(1)
 root.right.left = TreeNode(7)
 root.right.right = TreeNode(11)
 root.right.left.right = TreeNode(71)
