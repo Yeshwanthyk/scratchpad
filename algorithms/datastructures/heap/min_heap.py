@@ -55,8 +55,10 @@ class MinHeap:
     def sift_up(self, idx):
         parent = self.get_parent_idx(idx)
 
-        if parent >= 0 and self.heap[parent] > self.heap[idx]:
+        while parent >= 0 and self.heap[parent] > self.heap[idx]:
             self.heap[parent], self.heap[idx] = self.heap[idx], self.heap[parent]
+            idx = parent
+            parent = self.get_parent_idx(idx)
 
     def remove(self):
 
