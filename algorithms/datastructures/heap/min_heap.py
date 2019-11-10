@@ -49,6 +49,7 @@ class MinHeap:
 
             if smallest != idx:
                 array[idx], array[smallest] = array[smallest], array[idx]
+                idx = smallest
             else:
                 break
 
