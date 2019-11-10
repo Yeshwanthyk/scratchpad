@@ -48,6 +48,33 @@ ans = merge_intervals(intervals)
 print(ans)
 
 
+def has_overlap(a, b):
+    if a[1] >= b[0] and b[1] > a[0]:
+        return True
+
+
+def merge_overlapped(a, b):
+    return [min(a[0], b[0]), max(a[1], b[1])]
+
+
+def merge_intervals_v2(arr):
+
+    ans = [arr[0]]
+    for index in range(1, len(arr)):
+
+        if not ans:
+            ans.append(arr[index])
+
+        if has_overlap(ans[-1], arr[index]):
+            merged = merge_overlapped(ans[-1], arr[index])
+            ans.pop()
+            ans.append(merged)
+        else:
+            ans.append(arr[index])
+
+    return ans
+
+
 # class TestMergeIntervals(unittest.Testcase):
 #     def test_merge_interval_works():
 #         intervals = [[1, 4], [4, 5]]
