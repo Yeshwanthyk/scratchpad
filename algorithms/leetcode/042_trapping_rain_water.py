@@ -24,7 +24,6 @@ def trapping_rain_water(array):
         l1 += 1
         l2 += 1
 
-    breakpoint()
     while l2 < len(array):
 
         if array[l2] == 0:

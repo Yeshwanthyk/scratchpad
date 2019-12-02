@@ -26,35 +26,35 @@ def decode_string(s):
     for i in s:
 
         if i == "[":
+            stack.append(i)
             continue
 
         stack.append(i)
 
         if i == ']':
             # remove `]` that gets pushed into the stack
-            stack.pop()
+            popped = stack.pop()
             str = ""
+            dig = 0
+
             while True:
-                popped = stack.pop()
 
-                if popped.isdigit():
-
-                    dig = popped
-                    if len(stack) > 0:
-                        while True:
-                            if not stack:
-                                break
-
-                            if stack[-1].isdigit():
-                                dig = stack.pop() + dig
-                            else:
-                                break
-
-                        str = int(dig) * str
-                        stack.append(str)
-                        break
+                # concat the string until we hit `[`
+                while popped != '[' and stack:
+                    str = stack.pop() + str
                 else:
-                    str = popped + str
+                    break
+
+                if popped == '[':
+                    stack.pop()
+
+                    while True:
+                        if not stack or not stack[-1].isdigit():
+                            break
+                        else:
+                            dig = stack.pop() + dig
+                    str = int(dig) * str
+                    break
 
     return ''.join(stack)
 
