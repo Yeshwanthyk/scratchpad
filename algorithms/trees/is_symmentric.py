@@ -22,9 +22,6 @@ def helper(left, right):
     if left is not None and right is not None and left.val != right.val:
         return False
 
-    print(f"left : {left.val}")
-    print(f"right : {right.val}")
-    print("-----------------------")
     go_left = helper(left.left, right.right)
     go_right = helper(left.right, right.left)
 
