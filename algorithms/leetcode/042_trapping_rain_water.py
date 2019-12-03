@@ -13,26 +13,31 @@ Output: 6
 """
 
 
-def trapping_rain_water(array):
+def trapping_rain_water(arr):
 
-    l1 = 0
-    l2 = 1
-    trapped = 0
+    left = 0
+    right = len(array) - 1
 
-    # move until we find an elevation
-    while array[l1] == 0:
-        l1 += 1
-        l2 += 1
+    max_left = 0
+    max_right = 0
+    ans = 0
 
-    while l2 < len(array):
+    while left < right:
 
-        if array[l2] == 0:
-            l2 += 1
+        if arr[left] < arr[right]:
+            if arr[left] > max_left:
+                max_left = arr[left]
+            else:
+                ans += max_left - arr[left]
+            left += 1
         else:
-            trapped += min(array[l1], array[l2]) * (l2 - l1)
-            l1 = l2
-            l2 = l2 + 1
-    return trapped
+            if arr[right] > max_right:
+                max_right = arr[right]
+            else:
+                ans += max_right - arr[right]
+            right -= 1
+
+    return ans
 
 
 array = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
