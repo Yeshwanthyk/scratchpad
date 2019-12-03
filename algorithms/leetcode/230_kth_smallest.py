@@ -36,7 +36,7 @@ class TreeNode:
         self.right = None
 
 
-def kth_smallest(root, k):
+def kth_smallest_rec(root, k):
 
     if not root or k < 1:
         return
@@ -59,6 +59,28 @@ def inorder_rec(root, k, res):
         return
 
     inorder_rec(root.right, k, res)
+
+
+def kth_smallest_iter(root, k):
+
+    stack = []
+
+    while stack or root:
+
+        while root:
+            stack.append(root)
+            root = root.left
+
+        root = stack.pop()
+
+        k -= 1
+
+        if k == 0:
+            break
+
+        root = root.right
+
+    return root.val
 
 
 root = TreeNode(7)
