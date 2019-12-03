@@ -11,6 +11,7 @@ Input:
 ]
 Output: 1->1->2->3->4->4->5->6
 """
+import heapq
 import unittest
 
 
@@ -62,7 +63,6 @@ class MinHeap:
 
     def pop(self):
 
-        # ! Look into using deque and heapq here instead
         # Save lowest item in array in sorted list array
         self.sorted_list.append(self.heap[0])
 
@@ -95,8 +95,32 @@ class MinHeap:
                 break
 
 
-def sort_k_lists(lists):
-    pass
+class Node:
+
+    def __init__(self, val):
+
+        self.val = val
+        self.next = None
+
+
+def merge_k_sorted(lists):
+
+    if not lists or len(lists) < 0:
+        return
+
+    heap = []
+    tmp = dummy = Node(0)
+
+    for i in lists:
+        while i:
+            heapq.heappush(heap, i.val)
+            i = i.next
+
+    while heap:
+        tmp.next = Node(heapq.heappop(heap))
+        tmp = tmp.next
+
+    return dummy.next
 
 
 class TestSortKLists(unittest.TestCase):
