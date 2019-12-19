@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>First React app</title>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      function NameComponent(props) {
+        return <h1>{props.name}</h1>;
+      }
+
+      function HandleComponent(props) {
+        return <h3>{props.handle}</h3>;
+      }
+
+      function App() {
+        return (
+          <div id="container">
+            <NameComponent name="yesh" />
+            <HandleComponent handle="@yesh" />
+          </div>
+        );
+      }
+
+      const wrapperElement = React.createElement(
+        "div",
+        { id: "container" },
+        React.createElement(NameComponent, { name: "yesh" }),
+        React.createElement(HandleComponent, { handle: "@yesh" })
+      );
+
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>
