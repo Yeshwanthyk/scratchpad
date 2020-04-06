@@ -30,12 +30,9 @@ class Graph:
         recStack[node] = True
 
         neighbours = self.graph[node]
-        print(neighbours)
 
         for neighbour in neighbours:
-            print('here')
             if not visited[neighbour]:
-                print('here1')
                 self.is_cyclic_util(neighbour, visited,
                                     recStack, visited_nodes)
             elif recStack[neighbour]:
@@ -43,7 +40,7 @@ class Graph:
 
         # Unset the recStack elements
         recStack[node] = False
-        return visited_nodes.append(node)
+        visited_nodes.append(node)
 
 
 g = Graph(4)
