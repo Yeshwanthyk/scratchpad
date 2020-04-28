@@ -1,21 +1,35 @@
-<body>
-  <script src="https://unpkg.com/mithril/mithril.js"></script>
-  <script>
-    var root = document.body;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/mithril/mithril.js"></script>
+    <script>
+      var root = document.body;
 
-    var count = 0;
+      let count = 0;
 
-    var Hello = {
-      view: () => {
-        return m("main", [
-          m("h1", { class: "title" }, "App"),
-          m("button", { onclick: () => count++ }, count + " clicked"),
-        ]);
-      },
-    };
+      const Hello = {
+        view: () => {
+          return m("main", [
+            m("h1", { class: "title" }, "APP"),
+            m("button", { onclick: () => count++ }, count + " clicks"),
+          ]);
+        },
+      };
 
-    m.mount(root, Hello);
+      const Splash = {
+        view: () => {
+          return m("a", { href: "#!/hello" }, "Enter!");
+        },
+      };
 
-    var root = document.body;
-  </script>
-</body>
+      m.route(root, "/splash", {
+        "/splash": Splash,
+        "/hello": Hello,
+      });
+    </script>
+  </body>
+</html>
