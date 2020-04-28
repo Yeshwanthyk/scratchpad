@@ -1,0 +1,21 @@
+<body>
+  <script src="https://unpkg.com/mithril/mithril.js"></script>
+  <script>
+    var root = document.body;
+
+    var count = 0;
+
+    var Hello = {
+      view: () => {
+        return m("main", [
+          m("h1", { class: "title" }, "App"),
+          m("button", { onclick: () => count++ }, count + " clicked"),
+        ]);
+      },
+    };
+
+    m.mount(root, Hello);
+
+    var root = document.body;
+  </script>
+</body>
