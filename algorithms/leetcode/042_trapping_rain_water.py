@@ -16,7 +16,7 @@ Output: 6
 def trapping_rain_water(arr):
 
     left = 0
-    right = len(array) - 1
+    right = len(arr) - 1
 
     max_left = 0
     max_right = 0
