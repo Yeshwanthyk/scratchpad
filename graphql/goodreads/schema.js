@@ -67,7 +67,7 @@ module.exports = new GraphQLSchema({
         },
         resolve: (root, args) => {
           const xml = fetch(
-            `https://www.goodreads.com/author/show.xml?id=${args.id}&key=Kr23aNZUus1hAvktOi4dww`
+            `https://www.goodreads.com/author/show.xml?id=${args.id}&key=`
           )
             .then((response) => response.text())
             .then(parseXML);
