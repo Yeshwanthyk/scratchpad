@@ -39,4 +39,11 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 	/* cross axis goes from right->left */
 	/* Always consider the axis in flexbox */
 	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.box {
+	width: 33.3333%;
+	/* border: 10px solid mistyrose; */
+
 }
