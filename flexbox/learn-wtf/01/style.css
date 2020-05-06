@@ -80,12 +80,83 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 /* can get confusing when we shift the direction from row(default) to column */
 /* because the main axis shifts, we need to set min-height and font-size of the box */
+/* .container { */
+
+/* 	display: flex; */
+/* 	justify-content: center; */
+/* 	border: 10px solid mistyrose; */
+/* 	flex-direction: column; */
+/* 	min-height: 100vh; */
+
+/* } */
+
+/* Items Alignment */
+/* We give it height so that it can breathe, and by default align-items */
+/* is stretch */
+/* We can also do interesting things with `baseline` option. Which orders */
+/* all the items by aligning the characters bottom */
+/* .container { */
+
+/* 	display: flex; */
+/* 	border: 10px solid mistyrose; */
+/* 	height: 100vh; */
+/*   align-items:flex-start; */
+/* } */
+
+/* .box { */
+/*   width:33.333%; */
+/* } */
+
+/* .box2 { */
+/*   padding-bottom: 200px; */
+/* } */
+
+/* .box6 { */
+/*   padding-bottom: 0; */
+/* } */
+
+/* .box9 { */
+/*   padding-bottom: 50px; */
+/*   align-self:stretch; */
+/* } */
+
+/* justify-content handles where the extra whitespace goes */
+/* .container { */
+
+/* 	display: flex; */
+/* 	border: 10px solid mistyrose; */
+/* 	height: 100vh; */
+/* 	/1* align-content takes the space between cross axis, justify-content takes space *1/ */
+/* 	/1* between main axis *1/ */
+/* 	/1* justify-content: space-between; *1/ */
+/* 	flex-wrap: wrap; */
+/* 	align-content: flex-start; */
+/* 	justify-content: center; */
+/* } */
+
+/* .box { */
+/* 	width: 33.33% */
+/* } */
+
+/* align-center */
 .container {
 
 	display: flex;
-	justify-content: center;
 	border: 10px solid mistyrose;
-	flex-direction: column;
-	min-height: 100vh;
+	height: 100vh;
+	align-items: flex-start;
+}
 
+.box {
+	width: 33.33%
+}
+
+.box2 {
+	padding-bottom: 200px;
+}
+
+.box9 {
+
+	padding-bottom: 50px;
+	align-self: flex-end;
 }
