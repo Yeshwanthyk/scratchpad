@@ -17,5 +17,8 @@
     "nodemon": "^2.0.4",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.3"
+  },
+  "scripts": {
+    "start": "nodemon --exec ts-node src/index.ts"
   }
 }
