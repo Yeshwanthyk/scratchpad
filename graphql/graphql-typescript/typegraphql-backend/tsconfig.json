@@ -21,10 +21,12 @@
     "allowSyntheticDefaultImports": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowJs": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "rootDir": "src"
   },
+  "files": [],
   "exclude": ["node_modules"],
-  "include": ["./src/**/*.tsx", "./src/**/*.ts"],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts"]
 }
