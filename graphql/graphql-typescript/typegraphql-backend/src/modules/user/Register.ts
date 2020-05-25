@@ -30,7 +30,6 @@ export class RegisterResolver {
   ): Promise<User> {
     const hashedPassword = await bcrypt.hash(password, 12);
 
-    // @ts-ignore
     const user = await User.create({
       firstName,
       lastName,
