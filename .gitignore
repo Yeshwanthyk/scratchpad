@@ -113,3 +113,16 @@ graphql/.DS_Store
 graphql/graphql-typescript/.DS_Store
 js/react/.DS_Store
 .DS_Store
+
+# portfolio nextjs
+# next.js build output
+nextjs/fstudio/.next
+# dotenv environment variables file (build for Zeit Now)
+nextjs/fstudio/.env
+.env.build
+# Dependency directories
+nextjs/fstudio/node_modules/
+# Logs
+nextjs/fstudio/npm-debug.log*
+nextjs/fstudio/yarn-debug.log*
+nextjs/fstudio/yarn-error.log*
