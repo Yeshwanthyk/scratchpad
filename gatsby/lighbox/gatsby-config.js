@@ -9,8 +9,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `briefly`,
+        path: `${__dirname}/src/briefly`,
       },
     },
     `gatsby-transformer-sharp`,
