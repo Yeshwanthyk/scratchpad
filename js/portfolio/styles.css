@@ -1,0 +1,30 @@
+.parent {
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+}
+
+header {
+  padding: 2rem;
+  grid-column: 1 / 4;
+}
+
+.side-nav {
+  grid-column: 1 / 2;
+  font-size: 12px;
+  left: 27px;
+  top: 16px;
+  width: 223px;
+}
+
+main {
+  grid-column: 2 / 4;
+  display: flex;
+}
+
+img {
+  padding: 1rem;
+  /* flex-grow: 1; */
+  object-fit: cover;
+  height: 50vh;
+  width: 100%;
+}
