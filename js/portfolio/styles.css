@@ -129,6 +129,12 @@ select {
     url('./assets/fonts/LeagueScriptNumberOne-webfont.woff') format('woff');
 }
 
+@font-face {
+  font-family: ChunkFive;
+  src: url('./assets/fonts/ChunkFive-Regular.woff2') format('woff2'),
+    url('./assets/fonts/ChunkFive-Regular.woff') format('woff');
+}
+
 .parent {
   padding-left: var(--metric-mini-gutter);
   margin-top: var(--metric-mini-gutter);
@@ -138,42 +144,52 @@ select {
 }
 
 header {
-  padding: 2rem;
+  padding: var(--metric-gutter);
   grid-column: 1 / 2;
   padding-left: 6rem;
   padding-top: 2rem;
 }
 
+header svg {
+  width: 3rem;
+  height: 3rem;
+}
+
 .projects {
   display: flex;
   flex-wrap: wrap;
+  font-family: 'ChunkFive';
+  font-size: 0.8rem;
+  padding-left: var(--metric-gutter);
+  padding-bottom: var(--metric-gutter);
 }
 
 .side-nav {
   padding: var(--metric-gutter);
-  /* outline: 1px dotted; */
-  /* transition: opacity 500ms linear; */
-  /* transition-delay: 100ms; */
   grid-column: 1 / 2;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-svg {
-  width: 3rem;
-  height: 3rem;
+.side-nav p {
+  padding-bottom: var(--metric-mini-gutter);
+}
+
+.side-nav .instagram,
+.side-nav .twitter {
+  text-decoration: none;
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 main {
-  /* grid-column: 2 / 4; */
   display: flex;
   height: 100vh;
 }
 
 img {
   padding: 1rem;
-  /* flex-grow: 1; */
   object-fit: cover;
   height: 65vh;
 }
