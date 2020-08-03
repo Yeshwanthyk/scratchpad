@@ -135,12 +135,22 @@ select {
     url('./assets/fonts/ChunkFive-Regular.woff') format('woff');
 }
 
+@font-face {
+  font-family: HalfInline;
+  src: url('./assets/fonts/Half-Inline.otf') format('otf');
+}
+
+@font-face {
+  font-family: HalfRegular;
+  src: url('./assets/fonts/Half-Regular.otf') format('otf');
+}
+
 .parent {
   padding-left: var(--metric-mini-gutter);
   margin-top: var(--metric-mini-gutter);
   display: grid;
   grid-template: 100px 1fr auto / 250px 1fr auto;
-  font-family: 'LeagueScriptNumberOne';
+  font-family: 'HalfInline';
 }
 
 header {
@@ -158,8 +168,8 @@ header svg {
 .projects {
   display: flex;
   flex-wrap: wrap;
-  font-family: 'ChunkFive';
-  font-size: 0.8rem;
+  font-family: 'HalfRegular';
+  font-size: 1rem;
   padding-left: var(--metric-gutter);
   padding-bottom: var(--metric-gutter);
 }
@@ -173,14 +183,22 @@ header svg {
 }
 
 .side-nav p {
+  font-size: 1.5rem;
+  font-family: 'HalfInline';
   padding-bottom: var(--metric-mini-gutter);
+}
+
+.side-nav li {
+  padding-bottom: var(--metric-mini-gutter);
+  list-style: none;
 }
 
 .side-nav .instagram,
 .side-nav .twitter {
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding-bottom: 0.5rem;
+  font-family: 'HalfInline';
 }
 
 main {
