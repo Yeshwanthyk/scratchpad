@@ -13,7 +13,7 @@ export default {
   props: {
     event: Object
   }
-}
+};
 </script>
 
 <style scoped>
