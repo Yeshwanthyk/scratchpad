@@ -26,9 +26,10 @@ export default new Vuex.Store({
   actions: {
     createEvent({ commit }, event) {
       // save to mock db
-      EventService.postEvent(event);
-      // commit mutation
-      commit("ADD_EVENT", event);
+      return EventService.postEvent(event).then(() => {
+        // commit mutation
+        commit("ADD_EVENT", event);
+      });
     },
   },
   getters: {
