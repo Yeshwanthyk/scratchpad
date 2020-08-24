@@ -1,6 +1,6 @@
 # Eleventy Filter Coffee Starter
 
-I wanted a simple eleventy starter kit as a base for all easily setting up new projects.
+A simple eleventy starter kit as a base for easily setting up new projects.
 
 ## Features
 
