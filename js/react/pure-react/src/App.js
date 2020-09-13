@@ -1,14 +1,15 @@
 import React from "react";
 import { render } from "react-dom";
-import Pet from "./Pet.js";
+import SearchParams from "./SearchParams";
 
 // like blueprint/stamp
 const App = () => {
-  return React.createElement(
-    "div",
-    { id: "something-important" },
-    React.createElement("h1", {}, "Adopt Me!")
+  return (
+    <div>
+      <h1>Adopt me</h1>
+      <SearchParams />
+    </div>
   );
 };
 
-render(React.createElement(App), document.getElementById("root"));
+render(<App />, document.getElementById("root"));
