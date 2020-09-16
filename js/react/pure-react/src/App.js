@@ -5,10 +5,12 @@ import SearchParams from "./SearchParams";
 // like blueprint/stamp
 const App = () => {
   return (
-    <div>
-      <h1>Adopt me</h1>
-      <SearchParams />
-    </div>
+    <React.StrictMode>
+      <div>
+        <h1>Adopt me</h1>
+        <SearchParams />
+      </div>
+    </React.StrictMode>
   );
 };
 
