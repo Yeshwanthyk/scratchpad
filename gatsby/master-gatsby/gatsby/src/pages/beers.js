@@ -1,12 +1,11 @@
 import React from 'react';
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 
 function BeersPage() {
   return (
-    <div>
-      <Nav />
+    <>
       <p>beers</p>
-    </div>
+    </>
   );
 }
 

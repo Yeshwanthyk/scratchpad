@@ -1,10 +1,11 @@
 import React from 'react';
+import Layout from '../components/Layout';
 
 function PizzasPage() {
   return (
-    <div>
-      <p>pizzas</p>
-    </div>
+    <>
+      <p>pizzas page</p>
+    </>
   );
 }
 
