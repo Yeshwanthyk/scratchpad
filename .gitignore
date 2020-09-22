@@ -126,3 +126,6 @@ nextjs/fstudio/node_modules/
 nextjs/fstudio/npm-debug.log*
 nextjs/fstudio/yarn-debug.log*
 nextjs/fstudio/yarn-error.log*
+
+gatsby/master-gatsby/gatsby/.cache/*
+gatsby/master-gatsby/gatsby/public/*
