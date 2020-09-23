@@ -1,14 +1,21 @@
 import React from "react";
 import { render } from "react-dom";
 import SearchParams from "./SearchParams";
+import { Router, Link } from "@reach/router";
+import Details from "./Details";
 
 // like blueprint/stamp
 const App = () => {
   return (
     <React.StrictMode>
       <div>
-        <h1>Adopt me</h1>
-        <SearchParams />
+        <header>
+          <Link to="/"> Adopt me </Link>
+        </header>
+        <Router>
+          <SearchParams path="/" />
+          <Details path="/details/:id" />
+        </Router>
       </div>
     </React.StrictMode>
   );
