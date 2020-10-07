@@ -4,6 +4,7 @@ const settings = {
 	dimensions: [2048, 2048]
 };
 
+
 const sketch = () => {
 	const createGrid = () => {
 		const points = [];
