@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "async": "2.1.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "4.0.0",
     "keystone": "4.0.0-beta.5",
     "lodash": "^4.13.1",
